@@ -37,12 +37,13 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
                 getSystemService(SENSOR_SERVICE);
         List<Sensor> listaSensores = sensorManager.
                 getSensorList(Sensor.TYPE_ALL);
-        String menu[] = new String[listaSensores.size()];
+        String menu[] = new String[listaSensores.size()+1];
         int i=0;
         for(Sensor sensor: listaSensores) {
             menu[i]=(sensor.getName());
             i++;
         }
+        menu[menu.length]="GPS";
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
@@ -98,6 +99,54 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.container, newFragment,String.valueOf(id));
         ft.commit();}
+        if(position==1)
+        {Fragment newFragment;
+            newFragment = LightSensor.newInstance(position);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container, newFragment,String.valueOf(id));
+            ft.commit();}
+        if(position==8)
+        {Fragment newFragment;
+            newFragment = RotationVecSensor.newInstance(position);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container, newFragment,String.valueOf(id));
+            ft.commit();}
+        if(position==9)
+        {Fragment newFragment;
+            newFragment = GravitySensor.newInstance(position);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container, newFragment,String.valueOf(id));
+            ft.commit();}
+        if(position==10)
+        {Fragment newFragment;
+            newFragment = LinearAccSensor.newInstance(position);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container, newFragment,String.valueOf(id));
+            ft.commit();}
+        if(position==6)
+        {Fragment newFragment;
+            newFragment = GeoMagneticSensor.newInstance(position);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container, newFragment,String.valueOf(id));
+            ft.commit();}
+        if(position==0)
+        {Fragment newFragment;
+            newFragment = ProximitySensor.newInstance(position);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container, newFragment,String.valueOf(id));
+            ft.commit();}
+        if(position==4)
+        {Fragment newFragment;
+            newFragment = MagneticF_Sensor.newInstance(position);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container, newFragment,String.valueOf(id));
+            ft.commit();}
+        if(position==5)
+        {Fragment newFragment;
+            newFragment = GyroscopeSensor.newInstance(position);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container, newFragment,String.valueOf(id));
+            ft.commit();}
         return  true;
     }
     /**
