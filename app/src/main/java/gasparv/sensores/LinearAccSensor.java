@@ -1,5 +1,4 @@
 package gasparv.sensores;
-
 import android.app.Activity;
 import android.content.Context;
 import android.hardware.Sensor;
@@ -81,7 +80,6 @@ public class LinearAccSensor extends Fragment implements SensorEventListener {
         mSensorManager = (SensorManager) getActivity().getSystemService(context.SENSOR_SERVICE);
         mAcelSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
         mSensorManager.registerListener(this, mAcelSensor,SensorManager.SENSOR_DELAY_NORMAL);
-
     }
     public void stopCapturing() {
         mStarted = false;
@@ -106,6 +104,5 @@ public class LinearAccSensor extends Fragment implements SensorEventListener {
     }
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
     }
 }

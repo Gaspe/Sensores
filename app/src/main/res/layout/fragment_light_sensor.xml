@@ -56,6 +56,17 @@
         android:text="Iniciar Sensor"
         android:layout_marginBottom="156dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp" />
+        android:layout_margin="20dp" />}
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner" />
+    </LinearLayout>
 
 </LinearLayout>

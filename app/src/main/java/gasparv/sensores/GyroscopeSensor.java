@@ -83,7 +83,6 @@ public class GyroscopeSensor extends Fragment implements SensorEventListener {
         mSensorManager.registerListener(this, mAcelSensor,SensorManager.SENSOR_DELAY_NORMAL);
 
     }
-
     public void stopCapturing() {
         mStarted = false;
         mButton.setText("Iniciar Sensor");
